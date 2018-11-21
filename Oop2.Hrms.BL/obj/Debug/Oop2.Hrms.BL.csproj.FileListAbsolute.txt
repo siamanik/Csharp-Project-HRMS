@@ -1,0 +1,45 @@
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.BL.dll
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.BL.pdb
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.csprojResolveAssemblyReference.cache
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.dll
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.pdb
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.BL.dll.config
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.dll
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Data.dll
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Data.pdb
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.xml
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Framework.dll
+E:\Tausif\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Framework.pdb
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.BL.dll.config
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.BL.dll
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.BL.pdb
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.dll
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Data.dll
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Framework.dll
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Data.pdb
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Framework.pdb
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.xml
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.csprojResolveAssemblyReference.cache
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.dll
+E:\Tausif\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.pdb
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.BL.dll.config
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.BL.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.BL.pdb
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.SqlServer.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Data.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Framework.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Data.pdb
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Framework.pdb
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.xml
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\EntityFramework.SqlServer.xml
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.pdb
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\bin\Debug\Oop2.Hrms.Data.dll.config
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.csprojAssemblyReference.cache
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.csproj.CoreCompileInputs.cache
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.BL\obj\Debug\Oop2.Hrms.BL.csproj.CopyComplete

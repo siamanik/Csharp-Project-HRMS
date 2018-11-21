@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DeptInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DesiInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="JoinDate" Type="datetime" Nullable="false" />
+    <Property Name="DeptID" Type="int" Nullable="false" />
+    <Property Name="DesiID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeSalary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="Basic" Type="int" Nullable="false" />
+    <Property Name="HouseAlignment" Type="int" Nullable="false" />
+    <Property Name="MedicalFacilities" Type="int" Nullable="false" />
+    <Property Name="Total" Type="int" Nullable="false" />
+    <Property Name="IsCurrent" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PayRol">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Month" Type="int" />
+    <Property Name="Year" Type="int" />
+  </EntityType>
+  <EntityType Name="PaySlip">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="PayrolID" Type="int" Nullable="false" />
+    <Property Name="Basic" Type="int" Nullable="false" />
+    <Property Name="HouseAlignment" Type="int" Nullable="false" />
+    <Property Name="MedicalFacilities" Type="int" Nullable="false" />
+    <Property Name="Addition" Type="int" Nullable="false" />
+    <Property Name="Deduction" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="datetime" Nullable="false" />
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_EmployeeInfo_DeptInfo">
+    <End Role="DeptInfo" Type="Self.DeptInfo" Multiplicity="1" />
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeptInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeInfo">
+        <PropertyRef Name="DeptID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeInfo_DesiInfo">
+    <End Role="DesiInfo" Type="Self.DesiInfo" Multiplicity="1" />
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DesiInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeInfo">
+        <PropertyRef Name="DesiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeInfo_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeInfo">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeSalary_EmployeeInfo">
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="1" />
+    <End Role="EmployeeSalary" Type="Self.EmployeeSalary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeSalary">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaySlip_EmployeeInfo">
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="1" />
+    <End Role="PaySlip" Type="Self.PaySlip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PaySlip">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaySlip_PayRol">
+    <End Role="PayRol" Type="Self.PayRol" Multiplicity="1" />
+    <End Role="PaySlip" Type="Self.PaySlip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayRol">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PaySlip">
+        <PropertyRef Name="PayrolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRDBModelStoreContainer">
+    <EntitySet Name="DeptInfo" EntityType="Self.DeptInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DesiInfo" EntityType="Self.DesiInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeInfo" EntityType="Self.EmployeeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeSalary" EntityType="Self.EmployeeSalary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayRol" EntityType="Self.PayRol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaySlip" EntityType="Self.PaySlip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_EmployeeInfo_DeptInfo" Association="Self.FK_EmployeeInfo_DeptInfo">
+      <End Role="DeptInfo" EntitySet="DeptInfo" />
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeInfo_DesiInfo" Association="Self.FK_EmployeeInfo_DesiInfo">
+      <End Role="DesiInfo" EntitySet="DesiInfo" />
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeInfo_UserInfo" Association="Self.FK_EmployeeInfo_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeSalary_EmployeeInfo" Association="Self.FK_EmployeeSalary_EmployeeInfo">
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+      <End Role="EmployeeSalary" EntitySet="EmployeeSalary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaySlip_EmployeeInfo" Association="Self.FK_PaySlip_EmployeeInfo">
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+      <End Role="PaySlip" EntitySet="PaySlip" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaySlip_PayRol" Association="Self.FK_PaySlip_PayRol">
+      <End Role="PayRol" EntitySet="PayRol" />
+      <End Role="PaySlip" EntitySet="PaySlip" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

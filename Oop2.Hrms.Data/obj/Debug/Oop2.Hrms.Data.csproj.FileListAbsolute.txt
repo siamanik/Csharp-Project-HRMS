@@ -1,0 +1,12 @@
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\bin\Debug\Oop2.Hrms.Data.dll.config
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\bin\Debug\Oop2.Hrms.Data.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\bin\Debug\Oop2.Hrms.Data.pdb
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\bin\Debug\EntityFramework.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\bin\Debug\EntityFramework.xml
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\obj\Debug\Oop2.Hrms.Data.dll
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\obj\Debug\Oop2.Hrms.Data.pdb
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\obj\Debug\Oop2.Hrms.Data.csprojAssemblyReference.cache
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\obj\Debug\Oop2.Hrms.Data.csproj.CoreCompileInputs.cache
+E:\HRMS\Hrms Final\Hrms\HR\HR\Oop2.Hrms\Oop2.Hrms.Data\obj\Debug\Oop2.Hrms.Data.csproj.CopyComplete

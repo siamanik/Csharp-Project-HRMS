@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DeptInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="EmployeeInfoes" Relationship="Self.FK_EmployeeInfo_DeptInfo" FromRole="DeptInfo" ToRole="EmployeeInfo" />
+  </EntityType>
+  <EntityType Name="DesiInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="EmployeeInfoes" Relationship="Self.FK_EmployeeInfo_DesiInfo" FromRole="DesiInfo" ToRole="EmployeeInfo" />
+  </EntityType>
+  <EntityType Name="EmployeeInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeptID" Type="Int32" Nullable="false" />
+    <Property Name="DesiID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DeptInfo" Relationship="Self.FK_EmployeeInfo_DeptInfo" FromRole="EmployeeInfo" ToRole="DeptInfo" />
+    <NavigationProperty Name="DesiInfo" Relationship="Self.FK_EmployeeInfo_DesiInfo" FromRole="EmployeeInfo" ToRole="DesiInfo" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK_EmployeeInfo_UserInfo" FromRole="EmployeeInfo" ToRole="UserInfo" />
+    <NavigationProperty Name="EmployeeSalaries" Relationship="Self.FK_EmployeeSalary_EmployeeInfo" FromRole="EmployeeInfo" ToRole="EmployeeSalary" />
+    <NavigationProperty Name="PaySlips" Relationship="Self.FK_PaySlip_EmployeeInfo" FromRole="EmployeeInfo" ToRole="PaySlip" />
+  </EntityType>
+  <EntityType Name="EmployeeSalary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="Basic" Type="Int32" Nullable="false" />
+    <Property Name="HouseAlignment" Type="Int32" Nullable="false" />
+    <Property Name="MedicalFacilities" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Int32" Nullable="false" />
+    <Property Name="IsCurrent" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="EmployeeInfo" Relationship="Self.FK_EmployeeSalary_EmployeeInfo" FromRole="EmployeeSalary" ToRole="EmployeeInfo" />
+  </EntityType>
+  <EntityType Name="PayRol">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Month" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+    <NavigationProperty Name="PaySlips" Relationship="Self.FK_PaySlip_PayRol" FromRole="PayRol" ToRole="PaySlip" />
+  </EntityType>
+  <EntityType Name="PaySlip">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="PayrolID" Type="Int32" Nullable="false" />
+    <Property Name="Basic" Type="Int32" Nullable="false" />
+    <Property Name="HouseAlignment" Type="Int32" Nullable="false" />
+    <Property Name="MedicalFacilities" Type="Int32" Nullable="false" />
+    <Property Name="Addition" Type="Int32" Nullable="false" />
+    <Property Name="Deduction" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EmployeeInfo" Relationship="Self.FK_PaySlip_EmployeeInfo" FromRole="PaySlip" ToRole="EmployeeInfo" />
+    <NavigationProperty Name="PayRol" Relationship="Self.FK_PaySlip_PayRol" FromRole="PaySlip" ToRole="PayRol" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EmployeeInfo" Relationship="Self.FK_EmployeeInfo_UserInfo" FromRole="UserInfo" ToRole="EmployeeInfo" />
+  </EntityType>
+  <Association Name="FK_EmployeeInfo_DeptInfo">
+    <End Role="DeptInfo" Type="Self.DeptInfo" Multiplicity="1" />
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeptInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeInfo">
+        <PropertyRef Name="DeptID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeInfo_DesiInfo">
+    <End Role="DesiInfo" Type="Self.DesiInfo" Multiplicity="1" />
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DesiInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeInfo">
+        <PropertyRef Name="DesiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeInfo_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeInfo">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeSalary_EmployeeInfo">
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="1" />
+    <End Role="EmployeeSalary" Type="Self.EmployeeSalary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeSalary">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaySlip_EmployeeInfo">
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="1" />
+    <End Role="PaySlip" Type="Self.PaySlip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PaySlip">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaySlip_PayRol">
+    <End Role="PayRol" Type="Self.PayRol" Multiplicity="1" />
+    <End Role="PaySlip" Type="Self.PaySlip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayRol">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PaySlip">
+        <PropertyRef Name="PayrolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DeptInfoes" EntityType="Self.DeptInfo" />
+    <EntitySet Name="DesiInfoes" EntityType="Self.DesiInfo" />
+    <EntitySet Name="EmployeeInfoes" EntityType="Self.EmployeeInfo" />
+    <EntitySet Name="EmployeeSalaries" EntityType="Self.EmployeeSalary" />
+    <EntitySet Name="PayRols" EntityType="Self.PayRol" />
+    <EntitySet Name="PaySlips" EntityType="Self.PaySlip" />
+    <EntitySet Name="UserInfoes" EntityType="Self.UserInfo" />
+    <AssociationSet Name="FK_EmployeeInfo_DeptInfo" Association="Self.FK_EmployeeInfo_DeptInfo">
+      <End Role="DeptInfo" EntitySet="DeptInfoes" />
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeInfo_DesiInfo" Association="Self.FK_EmployeeInfo_DesiInfo">
+      <End Role="DesiInfo" EntitySet="DesiInfoes" />
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeInfo_UserInfo" Association="Self.FK_EmployeeInfo_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeSalary_EmployeeInfo" Association="Self.FK_EmployeeSalary_EmployeeInfo">
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+      <End Role="EmployeeSalary" EntitySet="EmployeeSalaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaySlip_EmployeeInfo" Association="Self.FK_PaySlip_EmployeeInfo">
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+      <End Role="PaySlip" EntitySet="PaySlips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaySlip_PayRol" Association="Self.FK_PaySlip_PayRol">
+      <End Role="PayRol" EntitySet="PayRols" />
+      <End Role="PaySlip" EntitySet="PaySlips" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
